@@ -1,38 +1,66 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 
-export default function Home({navigation}) {
- return (
-   <View style={styles.bloco}>
-        <Text style={styles.texto}>Seja Bem Vindo</Text>
+export default function Home({ navigation }) {
 
-        <View>
-            <TouchableOpacity style={styles.botao}
-            onPress={()=>navigation.navigate("Mongagua")}>
-                <Text style={styles.txtBotao}>Cidades</Text>
-            </TouchableOpacity>
+    return (
+        <View style={styles.bloco}>
+            <Text style={styles.titulo}>Seja Bem Vindo</Text>
+            <Text style={styles.subtitulo}>Escolha uma cidade para ver sua temperatura.</Text>
+
+            <View style={styles.areaBotoes}>
+                <TouchableOpacity style={[styles.botao, { marginLeft: 0 }]}
+                    onPress={() => navigation.navigate("Clima", {cidade: "Santos", id: 455991})}>
+                    <Text style={styles.txtBotao}>SANTOS</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.botao}
+                    onPress={() => navigation.navigate("Clima", {cidade: "São Vicente", id: 451401})}>
+                    <Text style={styles.txtBotao}>SÃO VICENTE</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.botao}
+                    onPress={() => navigation.navigate("Clima", {cidade: "Praia Grande", id: 455987})}>
+                    <Text style={styles.txtBotao}>PRAIA GRANDE</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.botao}
+                    onPress={() => navigation.navigate("Clima", {cidade: "Mongaguá", id: 460161})}>
+                    <Text style={styles.txtBotao}>MONGAGUÁ</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={[styles.botao, { marginRight: 0 }]}
+                    onPress={() => navigation.navigate("Clima", {cidade: "Itanhaém", id: 456259})}>
+                    <Text style={styles.txtBotao}>ITANHAÉM</Text>
+                </TouchableOpacity>
+            </View>
         </View>
-    </View>
-  );
+    );
 }
 
 const styles = StyleSheet.create({
-    bloco:{
-        marginTop:30
+    bloco: {
+        paddingTop: 30,
+        backgroundColor: "#8ecae6",
+        flex: 1,
+        alignItems: "center"
     },
-    texto:{
-        fontSize:30
+    areaBotoes: {
+        paddingHorizontal: 20,
     },
-    botao:{
-        marginTop:20,
-        backgroundColor:'#000',
-        width:'80%',
-        marginLeft:'10%'
-        
+    titulo: {
+        fontSize: 30
     },
-    txtBotao:{
-        fontSize:20,
-        color:'#FFF',
-        textAlign:'center'
+    subtitulo: {
+        textAlign: 'center',
+        fontSize: 20
+    },
+    botao: {
+        backgroundColor: '#023047',
+        borderRadius: 5,
+        padding: 8,
+        marginVertical: 10
+    },
+    txtBotao: {
+        fontSize: 20,
+        color: '#FFF',
+        textAlign: 'center',
+        fontWeight: "bold"
     }
 })
