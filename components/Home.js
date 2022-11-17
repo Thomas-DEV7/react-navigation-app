@@ -45,15 +45,17 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
     },
     titulo: {
-        fontSize: 30
+        fontSize: 30,
+        
     },
     subtitulo: {
         textAlign: 'center',
         fontSize: 20
     },
     botao: {
-        backgroundColor: '#023047',
+        backgroundColor: 'orange',
         borderRadius: 5,
+        width: 300,
         padding: 8,
         marginVertical: 10
     },

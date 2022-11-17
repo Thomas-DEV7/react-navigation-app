@@ -9,8 +9,8 @@ export default function App() {
 
   return (
     <NavigationContainer>
-    <Stack.Navigator screenOptions={{ headerStyle: {backgroundColor: "#FFB703"} }}>
-      <Stack.Screen name="Home" component={Home} />
+    <Stack.Navigator screenOptions={{ headerStyle: {backgroundColor: "steelblue"} }}>
+      <Stack.Screen name="Tela inicial" component={Home} />
       <Stack.Screen name="Clima" component={Clima} options={({route}) => ({ headerTitle: route.params.cidade})}/>
     </Stack.Navigator>
   </NavigationContainer>
